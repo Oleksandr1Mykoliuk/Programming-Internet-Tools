@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Labaratory work 1</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+<script>
+	function setPost(){
+		document.getElementById("form").setAttribute("action","php/test_post.php");
+		document.getElementById("form").setAttribute("method","post");}
+	function setGet(){
+		document.getElementById("form").setAttribute("action","php/test_get.php");
+		document.getElementById("form").setAttribute("method","get");
+	}
+</script>
+<header>
+	<div class="header">
+		<h1>Create account</h1>
+	</div>
+</header>
+
+<main>
+
+	<div  class="content">
+		<form action="php/test_post.php" method="post" id="form" enctype="multipart/form-data">
+
+			<p><label for="user">Name</label>
+			<input type="text" name="user" id="user" placeholder="Enter your name" required></p>
+			<p><label for="mail">Email</label>
+			<input type="email" id="mail" name="mail" placeholder="Enter your email address" required></p>
+			<p><label for="pass">Password</label>
+			<input type="password" id="pass" name="pass" placeholder="Enter password" required></p>
+			<p><label> Attach a photo with confirmation </label>
+			<input type="file"  name="filename"  accept="image/*"></p>
+  			 <p><label for="method">Choose: </label>
+  			 <input type="radio" name="method" id="method" value="POST" checked
+  			 onclick="setPost()">POST
+  			 <input type="radio" name="method" id="method" value="GET"
+				 onclick="setGet()">GET</p>
+			<p><input type="submit" name="done" value="Send"></p>
+		</form>
+	</div>
+</main>
+<footer></footer>
+</body>
+</html>
